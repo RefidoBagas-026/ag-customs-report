@@ -9,7 +9,7 @@ if [ "$BRANCH" == "dev" ]; then
     git clone $GIT_URL_DEV out
 elif [ "$BRANCH" == "uat" ]; then
     git clone $GIT_URL_UAT out
-elif [ "$BRANCH" == "master" ]; then
+elif [ "$BRANCH" == "main" ]; then
     git clone $GIT_URL_MASTER out
 else
     git clone $GIT_URL out
