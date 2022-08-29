@@ -30,12 +30,10 @@ export async function configure(aurelia) {
         }
       }
 
-      var auth = "https://com-danliris-service-auth.azurewebsites.net/v1/";
-      // var customsReport = "https://com-danliris-service-support.azurewebsites.net/v1/" ;
-      var customsReport = "http://localhost:9080/v1/";
+      var auth = "https://com-ambassador-service-auth-uat.azurewebsites.net/v1/";
+      var customsReport = "https://ag-customs-report.azurewebsites.net/v1/" ;
       var purchasing = "https://com-danliris-service-purchasing.azurewebsites.net/v1/" ;
-      // var inventory = "https://com-danliris-service-inventory-prd.azurewebsites.net/v1/";
-      var inventory = "http://localhost:5000/v1/";
+      var inventory = "https://com-danliris-service-inventory-prd.azurewebsites.net/v1/";
       var garmentProduction = "https://com-danliris-service-garment.azurewebsites.net/";
 
 
