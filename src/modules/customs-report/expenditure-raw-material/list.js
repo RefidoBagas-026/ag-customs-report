@@ -112,7 +112,6 @@ export class List {
         this.searching();
     }
       reset() {
-        this.type = "";
         this.dateFrom = "";
         this.dateTo = "";
         
@@ -131,7 +130,6 @@ export class List {
 
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             var info = {
-                type : this.type ? this.type : "",
                 dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
                 dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
             }
