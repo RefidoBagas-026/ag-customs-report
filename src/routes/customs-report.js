@@ -152,6 +152,20 @@ module.exports = [
 
     // }
     {
+        route: '/customs-report/receipt-raw-material',
+        name: 'customs-report-receipt-raw-material',
+        moduleId: './modules/customs-report/receipt-raw-material/index',
+        nav: true,
+        title: 'Laporan Pemasukan Bahan Baku',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    
+    },
+    {
         route: '/customs-report/expenditure-raw-material',
         name: 'customs-report-expenditure-raw-material',
         moduleId: './modules/customs-report/expenditure-raw-material/index',
