@@ -1,7 +1,7 @@
 
 <template>
   
-        <h1 class="page-header">Laporan Pemasukan Bahan Baku</h1>
+        <h1 class="page-header">Laporan Pemasukan Barang Jadi</h1>
         <form class="form-horizontal">
         
             <au-datepicker 
@@ -35,44 +35,32 @@
                 <thead align="center">
                     <tr>
                         <td  align="center" rowspan="2">No</td>
-                        <td  align="center" rowspan="2">Tipe Bea Cukai</td>
-                        <td  colspan="2">Dokumen Pabean</td>                        
-                        <td  colspan="2">Bukti Penerimaan Barang</td>
+                        <td  colspan="2">Bukti Penerimaan</td>
                         <td  align="center" rowspan="2">Kode Barang</td>
                         <td  align="center" rowspan="2">Nama Barang</td>
                         <td  align="center" rowspan="2">Satuan</td>
-                        <td  algin="right" rowspan="2">Jumlah</td>
-                        <td  align="center" rowspan="2">Mata Uang</td>
-                        <td  algin="right" rowspan="2">Nilai Barang</td>
+                        <td  colspan="2">Jumlah</td>
                         <td  align="center" rowspan="2">Gudang</td>
-                        <td  align="center" rowspan="2">Penerima SubKontrak</td>
-                        <td  align="center" rowspan="2">Negara Asal Barang</td>                                
                     </tr>
                     <tr>
                         <td>Nomor</td>
                         <td>Tanggal</td>
-                        <td>Nomor</td>
-                        <td>Tanggal</td>
+                        <td>Dari Produksi</td>
+                        <td>Dari Sub Kontrak</td>
                     </tr>
                 </thead>
                 <tbody>
                  
                     <tr repeat.for="item of data">
                             <td class="text-center">${$index + 1}</td>
-                            <td class="text-center">${item.CustomsType}</td>                            
-                            <td class="text-center">${item.BeacukaiNo}</td>
-                            <td class="text-center">${item.BeacukaiDate | dateFormat:'D MMM YYYY'}</td>
-                            <td class="text-center">${item.URNNo}</td>
-                            <td class="text-center">${item.URNDate | dateFormat:'D MMM YYYY'}</td>
+                            <td class="text-center">${item.FinishingOutNo}</td>
+                            <td class="text-center">${item.FinishingOutDate | dateFormat:'D MMM YYYY'}</td>
                             <td class="text-center">${item.ProductCode}</td>
                             <td class="text-center">${item.ProductName}</td>
-                            <td class="text-center">${item.SmallUomUnit}</td>
-                            <td class="text-center">${item.SmallQuantity}</td>
-                            <td class="text-center">${item.DOCurrencyCode}</td>
-                            <td class="text-center">${item.Amount}</td>
+                            <td class="text-center">${item.UomUnit}</td>
+                            <td class="text-center">${item.Quantity}</td>
+                            <td class="text-center">${item.QuantitySC}</td>
                             <td class="text-center">${item.StorageName}</td>
-                            <td class="text-center">${item.SupplierName}</td>
-                            <td class="text-center">${item.Country}</td>                            
                     </tr>
                    
                 </tbody>

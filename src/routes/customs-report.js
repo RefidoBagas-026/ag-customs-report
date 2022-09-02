@@ -179,4 +179,18 @@ module.exports = [
         }
     
     },
+    {
+        route: '/customs-report/finishing-out-of-good',
+        name: 'customs-report-finishing-out-of-good',
+        moduleId: './modules/customs-report/finishing-out-of-good/index',
+        nav: true,
+        title: 'Laporan Pesaukan Barag Jadi',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    
+    },
 ]
