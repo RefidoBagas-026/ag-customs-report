@@ -184,7 +184,7 @@ module.exports = [
         name: 'customs-report-finishing-out-of-good',
         moduleId: './modules/customs-report/finishing-out-of-good/index',
         nav: true,
-        title: 'Laporan Pemasukan Barag Jadi',
+        title: 'Laporan Pemasukan Barang Jadi',
         auth: true,
         settings: {
             group: "customs-report",
