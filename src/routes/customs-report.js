@@ -193,4 +193,18 @@ module.exports = [
         }
     
     },
+    {
+        route: '/customs-report/fact-item-mutation-bb-central',
+        name: 'customs-report-item-mutation-bb-central',
+        moduleId: './modules/customs-report/fact-item-mutation-bb-central/index',
+        nav: true,
+        title: 'Laporan Pertanggungjawaban Mutasi Bahan Baku Pusat',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    
+    },
 ]

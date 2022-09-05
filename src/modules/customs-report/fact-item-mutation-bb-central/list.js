@@ -54,6 +54,7 @@ export class List {
             .then(result => {
                this.info.total=result.info.total;    
                this.data=result.data;
+               var index=0;
                
             });
             
