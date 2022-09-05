@@ -33,30 +33,34 @@
             <table class="table table-bordered table-hover" border="1" id="myTable">
                 <thead align="center">
                     <tr>
+                        <td>No</td>
                         <td>Kode Barang</td>
                         <td>Nama Barang</td>
-                        <td>Tipe</td>
+                        <!-- <td>Tipe</td> -->
                         <td>Satuan</td>
                         <td>Saldo Awal</td>
                         <td>Pemasukan</td>
                         <td >Pengeluaran</td>
-                        <td >Penyesuaian</td>
+                        <!-- <td >Penyesuaian</td> -->
                         <td >Saldo Akhir</td>
+                        <td >Gudang</td>
                       
                     </tr>
                 </thead>
                 <tbody>
                  
                     <tr repeat.for="item of data">
+                            <td class="text-left">${$index + 1}</td>
                             <td class="text-left">${item.ItemCode}</td>
                             <td class="text-left">${item.ItemName}</td>
-                            <td class="text-left">${item.SupplierType}</td>
+                            <!-- <td class="text-left">${item.SupplierType}</td> -->
                             <td class="text-left">${item.UnitQtyName}</td>
                             <td class="text-right">${item.BeginQty}</td>
                             <td class="text-right">${item.ReceiptQty}</td>
                             <td class="text-right">${item.ExpenditureQty}</td>
-                            <td class="text-right">${item.AdjustmentQty}</td>
+                            <!-- <td class="text-right">${item.AdjustmentQty}</td> -->
                             <td class="text-right">${item.LastQty}</td>
+                            <td class="text-left">Gudang AG2</td>
                           
                     </tr>
                 </tbody>
