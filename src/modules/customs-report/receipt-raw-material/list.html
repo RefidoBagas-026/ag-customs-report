@@ -35,8 +35,8 @@
                 <thead align="center">
                     <tr>
                         <td  align="center" rowspan="2">No</td>
-                        <td  align="center" rowspan="2">Tipe Bea Cukai</td>
-                        <td  colspan="2">Dokumen Pabean</td>                        
+                        <td  align="center" rowspan="2">Jenis Dokumen</td>
+                        <td  colspan="3">Dokumen Pabean</td>                        
                         <td  colspan="2">Bukti Penerimaan Barang</td>
                         <td  align="center" rowspan="2">Kode Barang</td>
                         <td  align="center" rowspan="2">Nama Barang</td>
@@ -51,6 +51,7 @@
                     <tr>
                         <td>Nomor</td>
                         <td>Tanggal</td>
+                        <td>Nomor Seri Barang</td>                        
                         <td>Nomor</td>
                         <td>Tanggal</td>
                     </tr>
@@ -62,6 +63,7 @@
                             <td class="text-center">${item.CustomsType}</td>                            
                             <td class="text-center">${item.BeacukaiNo}</td>
                             <td class="text-center">${item.BeacukaiDate | dateFormat:'D MMM YYYY'}</td>
+                            <td class="text-center">${item.SerialNo}</td>                            
                             <td class="text-center">${item.URNNo}</td>
                             <td class="text-center">${item.URNDate | dateFormat:'D MMM YYYY'}</td>
                             <td class="text-center">${item.ProductCode}</td>
