@@ -162,8 +162,7 @@ module.exports = [
             group: "customs-report",
             permission: { "B1": 1, "BC":1, "C9": 1 },
             iconClass: 'fa fa-dashboard'
-        }
-    
+        }    
     },
     {
         route: '/customs-report/expenditure-raw-material',
@@ -177,7 +176,6 @@ module.exports = [
             permission: { "B1": 1, "BC":1, "C9": 1 },
             iconClass: 'fa fa-dashboard'
         }
-    
     },
     {
         route: '/customs-report/finishing-out-of-good',
@@ -191,7 +189,6 @@ module.exports = [
             permission: { "B1": 1, "BC":1, "C9": 1 },
             iconClass: 'fa fa-dashboard'
         }
-    
     },
     {
         route: '/customs-report/fact-item-mutation-bb-central',
@@ -205,6 +202,18 @@ module.exports = [
             permission: { "B1": 1, "BC":1, "C9": 1 },
             iconClass: 'fa fa-dashboard'
         }
-    
+    },
+    {
+        route: '/customs-report/waste-scrap',
+        name: 'customs-report-waste-scrap',
+        moduleId: './modules/customs-report/waste-scrap/index',
+        nav: true,
+        title: 'Laporan Penyelesaian Waste / Scrap',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
     },
 ]
