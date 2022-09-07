@@ -1,7 +1,7 @@
 
 <template>
   
-        <h1 class="page-header">Laporan Pemasukan Hasil Produksi</h1>
+        <h1 class="page-header">Laporan Pemakaian Barang Dalam Proses SubKontrak</h1>
         <form class="form-horizontal">
         
             <au-datepicker 
@@ -20,7 +20,7 @@
                 <label for="contact" class="col-sm-6 control-label"></label>
                 <div class="col-sm-3">
                     <button click.delegate="search()" class='btn btn-success'>Cari</button>
-                    <button click.delegate="reset()" class='btn btn-danger'>Reset</button>
+                    <button click.delegate="reset()" class='btn btn-success'>Reset</button>
                 </div>
             </div>
              <div class="btn-group pull-left">
@@ -35,32 +35,30 @@
                 <thead align="center">
                     <tr>
                         <td  align="center" rowspan="2">No</td>
-                        <td  colspan="2">Bukti Penerimaan</td>
+                        <td  colspan="2">Bukti Pengeluaran</td>
                         <td  align="center" rowspan="2">Kode Barang</td>
                         <td  align="center" rowspan="2">Nama Barang</td>
-                        <td  align="center" rowspan="2">Satuan</td>
-                        <td  colspan="2">Jumlah</td>
-                        <td  align="center" rowspan="2">Gudang</td>
+                        <td  align="center" rowspan="2" >Sat</td>
+                        <td  align="center" rowspan="2">DiSubKontrakan</td>
+                        <td  align="center" rowspan="2" >Penerima SubKontrak</td>
+                                
                     </tr>
                     <tr>
-                        <td>Nomor</td>
-                        <td>Tanggal</td>
-                        <td>Dari Produksi</td>
-                        <td>Dari Sub Kontrak</td>
+                        <td>NOMOR</td>
+                        <td>TANGGAL</td>
                     </tr>
                 </thead>
                 <tbody>
                  
                     <tr repeat.for="item of data">
                             <td class="text-center">${$index + 1}</td>
-                            <td class="text-center">${item.FinishingOutNo}</td>
-                            <td class="text-center">${item.FinishingOutDate | dateFormat:'D MMM YYYY'}</td>
+                            <td class="text-center">${item.UENNo}</td>
+                            <td class="text-center">${item.ExpenditureDate | dateFormat:'D MMM YYYY'}</td>
                             <td class="text-center">${item.ProductCode}</td>
                             <td class="text-center">${item.ProductName}</td>
                             <td class="text-center">${item.UomUnit}</td>
-                            <td class="text-center">${item.Quantity}</td>
-                            <td class="text-center">${item.QuantitySC}</td>
-                            <td class="text-center">${item.StorageName}</td>
+                            <td class="text-center">${item.QuantitySubcon}</td>
+                            <td class="text-center">${item.SupplierName}</td>
                     </tr>
                    
                 </tbody>
