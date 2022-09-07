@@ -182,7 +182,7 @@ module.exports = [
         name: 'customs-report-finishing-out-of-good',
         moduleId: './modules/customs-report/finishing-out-of-good/index',
         nav: true,
-        title: 'Laporan Pemasukan Barang Jadi',
+        title: 'Laporan Pemasukan Hasil Produksi',
         auth: true,
         settings: {
             group: "customs-report",
@@ -209,6 +209,19 @@ module.exports = [
         moduleId: './modules/customs-report/waste-scrap/index',
         nav: true,
         title: 'Laporan Penyelesaian Waste / Scrap',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
+        route: '/customs-report/wip-in-subcon',
+        name: 'customs-report-wip-in-subcon',
+        moduleId: './modules/customs-report/wip-in-subcon/index',
+        nav: true,
+        title: 'Laporan Pemakaian Barang Dalam Proses SubKontrak',
         auth: true,
         settings: {
             group: "customs-report",
