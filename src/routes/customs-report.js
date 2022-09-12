@@ -178,6 +178,19 @@ module.exports = [
         }
     },
     {
+        route: '/customs-report/wip-in-subcon',
+        name: 'customs-report-wip-in-subcon',
+        moduleId: './modules/customs-report/wip-in-subcon/index',
+        nav: true,
+        title: 'Laporan Pemakaian Barang Dalam Proses SubKontrak',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
         route: '/customs-report/finishing-out-of-good',
         name: 'customs-report-finishing-out-of-good',
         moduleId: './modules/customs-report/finishing-out-of-good/index',
@@ -191,11 +204,37 @@ module.exports = [
         }
     },
     {
+        route: '/customs-report/finishing-out-of-good',
+        name: 'customs-report-finishing-out-of-good',
+        moduleId: './modules/customs-report/finishing-out-of-good/index',
+        nav: true,
+        title: 'Laporan Pengeluaran Hasil Produksi',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
         route: '/customs-report/fact-item-mutation-bb-central',
         name: 'customs-report-item-mutation-bb-central',
         moduleId: './modules/customs-report/fact-item-mutation-bb-central/index',
         nav: true,
-        title: 'Laporan Pertanggungjawaban Mutasi Bahan Baku Pusat',
+        title: 'Laporan Mutasi Bahan Baku',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
+        route: '/customs-report/mutation-expenditure-goods',
+        name: 'customs-report-mutation-expenditure-goodsl',
+        moduleId: './modules/customs-report/mutation-expenditure-goods/index',
+        nav: true,
+        title: 'Laporan Mutasi Hasil Produksi',
         auth: true,
         settings: {
             group: "customs-report",
@@ -216,17 +255,5 @@ module.exports = [
             iconClass: 'fa fa-dashboard'
         }
     },
-    {
-        route: '/customs-report/wip-in-subcon',
-        name: 'customs-report-wip-in-subcon',
-        moduleId: './modules/customs-report/wip-in-subcon/index',
-        nav: true,
-        title: 'Laporan Pemakaian Barang Dalam Proses SubKontrak',
-        auth: true,
-        settings: {
-            group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
-            iconClass: 'fa fa-dashboard'
-        }
-    },
+   
 ]
