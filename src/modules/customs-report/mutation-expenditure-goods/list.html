@@ -1,7 +1,7 @@
 
 <template>
   
-        <h1 class="page-header">Laporan Mutasi Bahan Baku</h1>
+        <h1 class="page-header">Laporan Mutasi Hasil Produksi</h1>
         <form class="form-horizontal">
             <au-datepicker 
             label="Tanggal Awal Laporan" 
@@ -51,16 +51,16 @@
                  
                     <tr repeat.for="item of data">
                             <td class="text-left">${$index + 1}</td>
-                            <td class="text-left">${item.ItemCode}</td>
-                            <td class="text-left">${item.ItemName}</td>
+                            <td class="text-left">${item.KodeBarang}</td>
+                            <td class="text-left">${item.NamaBarang}</td>
                             <!-- <td class="text-left">${item.SupplierType}</td> -->
                             <td class="text-left">${item.UnitQtyName}</td>
-                            <td class="text-right">${item.BeginQty}</td>
-                            <td class="text-right">${item.ReceiptQty}</td>
-                            <td class="text-right">${item.ExpenditureQty}</td>
+                            <td class="text-right">${item.SaldoAwal}</td>
+                            <td class="text-right">${item.Pemasukan}</td>
+                            <td class="text-right">${item.Pengeluaran}</td>
                             <!-- <td class="text-right">${item.AdjustmentQty}</td> -->
-                            <td class="text-right">${item.LastQty}</td>
-                            <td class="text-left">Gudang AG2</td>
+                            <td class="text-right">${item.Selisih}</td>
+                            <td class="text-left">${item.Storage}</td>
                           
                     </tr>
                 </tbody>

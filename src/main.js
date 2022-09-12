@@ -34,7 +34,7 @@ export async function configure(aurelia) {
       var customsReport = "https://com-ambassador-service-support.azurewebsites.net/v1/" ;
       var purchasing = "https://com-ambassador-service-purchasing-uat.azurewebsites.net/v1/" ;
       var inventory = "https://com-danliris-service-inventory-prd.azurewebsites.net/v1/";
-      var garmentProduction = "https://com-danliris-service-garment.azurewebsites.net/";
+      var garmentProduction = "https://com-ambassador-service-garment-uat.azurewebsites.net/";
 
 
       config.registerEndpoint('auth', auth);
