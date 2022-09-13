@@ -191,6 +191,19 @@ module.exports = [
         }
     },
     {
+        route: '/customs-report/expenditure-good',
+        name: 'customs-report-expenditure-good',
+        moduleId: './modules/customs-report/expenditure-good/index',
+        nav: true,
+        title: 'Laporan Pengeluaran Hasil Produksi',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "B1": 1, "BC":1, "C9": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+    },
+    {
         route: '/customs-report/fact-item-mutation-bb-central',
         name: 'customs-report-item-mutation-bb-central',
         moduleId: './modules/customs-report/fact-item-mutation-bb-central/index',

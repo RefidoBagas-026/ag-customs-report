@@ -8,7 +8,6 @@ export class List {
   constructor(router, service) {
         this.service = service;
         this.router = router;
-        
     }
     
     info = { page: 1,size:50};
@@ -21,7 +20,7 @@ export class List {
             length: 4
         }
     };
-     
+
 
     search(){
         this.error = {};
@@ -52,30 +51,67 @@ export class List {
         this.service.search(args)
      
             .then(result => {
+               this.rowCount=[];
+               var rowDoc=[];
                this.info.total=result.info.total;    
                var index=0;
-               this.beginQtyTotal = 0;
-               this.receiptQtyTotal = 0;
-               this.expendQtyTotal = 0;
-               this.lastQtyTotal = 0;
-              this.data=[];
-              for (var i of result.data){
-                   
-               this.beginQtyTotal += i.BeginQty;
-               this.receiptQtyTotal += i.ReceiptQty;
-               this.expendQtyTotal += i.ExpenditureQty;
-               this.lastQtyTotal += i.LastQty;
-               // i.jumlah = i.jumlah.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+               this.totalqty = 0;
+                this.totalprice = 0;
+               this.data=[];
+               for (var i of result.data){
+                    
+                this.totalqty += i.qty;
+                this.totalprice += i.price;
+                // i.jumlah = i.jumlah.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
-               this.data.push(i);
-           }
-
-           this.beginQtyTotal = this.beginQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-           this.receiptQtyTotal = this.receiptQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-           this.expendQtyTotal = this.expendQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-           this.lastQtyTotal = this.lastQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-            
+                this.data.push(i);
+            }
                
+            //    for(var a of result.data){
+            //        var bc=a.BCType.toString();
+            //        var doc=a.BCNo;
+            //        var bcdate = a.BCDate.toString();
+            //        if(!this.rowCount[bc]){
+            //            this.rowCount[bc]=1;
+            //        }
+            //        else{
+            //            this.rowCount[bc]++;
+            //        }
+
+            //        if(!rowDoc[doc+bc]){
+            //            index++;
+            //            //a.count=index;
+            //            rowDoc[doc+bc]=1;
+            //        }
+            //        else{
+            //            rowDoc[doc+bc]++;
+            //        }
+
+            //        if(!rowDoc[bc+bcdate]){
+            //         index++;
+            //         //a.count=index;
+            //         rowDoc[bc+bcdate]=1;
+            //         }
+            //         else{
+            //             rowDoc[bc+bcdate]++;
+            //         }
+            //    }
+            //    for(var b of result.data){
+            //        let bcno=result.data.find(o=> o.BCType + o.BCNo==b.BCType + b.BCNo);
+            //        if(bcno){
+            //            bcno.docspan=rowDoc[b.BCNo+b.BCType];
+            //        }
+            //        let bctipe=result.data.find(o=> o.BCType ==b.BCType);
+            //        if(bctipe){
+            //            bctipe.rowspan=this.rowCount[b.BCType];
+            //        }
+            //        let bcdates=result.data.find(o=> o.BCType + o.BCDate == b.BCType + b.BCDate);
+            //        //console.log(bcdates)
+            //        if(bcdates){
+            //             bcdates.bcdatespan=rowDoc[b.BCType + b.BCDate];
+            //        }
+            //    }
+            //    this.data=result.data;
             });
             
     }
@@ -86,10 +122,9 @@ export class List {
         this.searching();
     }
       reset() {
-        this.type = "";
         this.dateFrom = "";
         this.dateTo = "";
-        
+        this.data=[];
         this.info.page = 1;
     }
 
