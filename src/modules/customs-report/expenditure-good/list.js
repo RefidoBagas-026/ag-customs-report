@@ -62,7 +62,8 @@ export class List {
                     
                 this.totalqty += i.qty;
                 this.totalprice += i.price;
-                // i.jumlah = i.jumlah.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                i.price = i.price.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                i.qty = i.qty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
                 this.data.push(i);
             }
