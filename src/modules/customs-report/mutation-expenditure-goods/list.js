@@ -53,6 +53,7 @@ export class List {
      
             .then(result => {
                this.info.total=result.info.total;    
+
                var index=0;
                this.data=[];
                this.beginQtyTotal = 0;
@@ -73,8 +74,7 @@ export class List {
             this.beginQtyTotal = this.beginQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             this.receiptQtyTotal = this.receiptQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
             this.expendQtyTotal = this.expendQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            this.lastQtyTotal = this.lastQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
-             
+            this.lastQtyTotal = this.lastQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) 
                
             });
             
