@@ -55,6 +55,16 @@ export class List {
                var rowDoc=[];
                this.info.total=result.info.total;    
                var index=0;  
+               this.data=[];
+               for (var i of result.data){
+                    
+                // this.totalqty += i.qty;
+                // this.totalprice += i.price;
+                i.SmallQuantity = i.SmallQuantity.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                i.Amount = i.Amount.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+
+                this.data.push(i);
+            }
                
             //    for(var a of result.data){
             //        var bc=a.BCType.toString();
@@ -100,7 +110,7 @@ export class List {
             //             bcdates.bcdatespan=rowDoc[b.BCType + b.BCDate];
             //        }
             //    }
-               this.data=result.data;
+            //    this.data=result.data;
             });
             
     }

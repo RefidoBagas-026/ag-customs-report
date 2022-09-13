@@ -65,7 +65,11 @@ export class List {
                this.receiptQtyTotal += i.ReceiptQty;
                this.expendQtyTotal += i.ExpenditureQty;
                this.lastQtyTotal += i.LastQty;
-               // i.jumlah = i.jumlah.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+
+               i.BeginQty = i.BeginQty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+               i.ReceiptQty = i.ReceiptQty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+               i.ExpenditureQty = i.ExpenditureQty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+               i.LastQty = i.LastQty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
                this.data.push(i);
            }
