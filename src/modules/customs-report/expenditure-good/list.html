@@ -1,0 +1,89 @@
+
+<template>
+  
+        <h1 class="page-header">Laporan Pengeluaran Hasil Produksi</h1>
+        <form class="form-horizontal">
+        
+            <au-datepicker 
+            label="Tanggal Awal Laporan" 
+            value.bind="dateFrom" error.bind="error.dateFrom"
+            options.bind="controlOptions">
+            </au-datepicker>
+
+            <au-datepicker 
+            label="Tanggal Akhir Laporan" 
+            value.bind="dateTo" error.bind="error.dateTo"
+            options.bind="controlOptions">
+            </au-datepicker>
+
+            <div class="form-group">
+                <label for="contact" class="col-sm-6 control-label"></label>
+                <div class="col-sm-3">
+                    <button click.delegate="search()" class='btn btn-success'>Cari</button>
+                    <button click.delegate="reset()" class='btn btn-danger'>Reset</button>
+                </div>
+            </div>
+             <div class="btn-group pull-left">
+                <a click.delegate="ExportToExcel()" class='btn btn-primary'>Excel</a>
+            </div>
+        </form>
+           <br>
+        </br>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" border="1" id="myTable">
+                <thead align="center">
+                    <tr>
+                        <td  align="center" rowspan="2">No</td>
+                        <td  colspan="2">PEB</td>
+                        <td  colspan="2">Bukti Pengeluaran Barang</td>
+                        <td  align="center" rowspan="2">Pembeli/Penerima</td>
+                        <td  align="center" rowspan="2">Negara Tujuan</td>
+                        <td  align="center" rowspan="2">Kode Barang</td>
+                        <td  align="center" rowspan="2">Nama Barang</td>
+                        <td  align="center" rowspan="2">Satuan</td>
+                        <td  align="center" rowspan="2">Jumlah</td>
+                        <td  align="center" rowspan="2">Mata Uang</td>
+                        <td  align="center" rowspan="2">Nilai Barang</td>
+                    </tr>
+                    <tr>
+                        <td>Nomor</td>
+                        <td>Tanggal</td>
+                        <td>Nomor</td>
+                        <td>Tanggal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                    <tr repeat.for="item of data">
+                            <td class="text-center">${$index + 1}</td>
+                            <td class="text-center">${item.pebNo}</td>
+                            <td class="text-center">${item.pebDate}</td>
+                            <td class="text-center">${item.expenditureGoodNo}</td>
+                            <td class="text-center">${item.expenditureDate | dateFormat:'D MMM YYYY'}</td>
+                            <td class="text-center">${item.buyerName}</td>
+                            <td class="text-center">${item.country}</td>
+                            <td class="text-center">${item.comodityCode}</td>
+                            <td class="text-center">${item.comodityName}</td>
+                            <td class="text-center">${item.uomUnit}</td>
+                            <td class="text-center">${item.qty}</td>
+                            <td class="text-center">${item.currencyCode}</td>
+                            <td class="text-center">${item.price}</td>
+                    </tr>
+                    <tr class="active">
+                        <td class="text-center" colspan="10"><strong>T O T A L  . . . . . . . . . . . . . . .</strong></td>
+                        <td class="text-right"><strong>${totalqty}</strong></td>
+                        <td></td>
+                        <td class="text-right"><strong>${totalprice}</strong></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
+            Tidak ada data.
+        </div>
+        <pagination if.bind="info.total>info.size"  info.bind="info" change.delegate="changePage($event)"></pagination>
+        <hr/>
+    </au-input-form> 
+</template>

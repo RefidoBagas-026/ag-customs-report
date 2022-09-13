@@ -53,8 +53,28 @@ export class List {
      
             .then(result => {
                this.info.total=result.info.total;    
-               this.data=result.data;
+
                var index=0;
+               this.data=[];
+               this.beginQtyTotal = 0;
+               this.receiptQtyTotal = 0;
+               this.expendQtyTotal = 0;
+               this.lastQtyTotal = 0;
+               for (var i of result.data){
+                   
+                this.beginQtyTotal += i.SaldoAwal;
+                this.receiptQtyTotal += i.Pemasukan;
+                this.expendQtyTotal += i.Pengeluaran;
+                this.lastQtyTotal += i.Selisih;
+                // i.jumlah = i.jumlah.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+ 
+                this.data.push(i);
+            }
+ 
+            this.beginQtyTotal = this.beginQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            this.receiptQtyTotal = this.receiptQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            this.expendQtyTotal = this.expendQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            this.lastQtyTotal = this.lastQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) 
                
             });
             

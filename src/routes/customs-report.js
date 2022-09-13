@@ -204,9 +204,9 @@ module.exports = [
         }
     },
     {
-        route: '/customs-report/finishing-out-of-good',
-        name: 'customs-report-finishing-out-of-good',
-        moduleId: './modules/customs-report/finishing-out-of-good/index',
+        route: '/customs-report/expenditure-good',
+        name: 'customs-report-expenditure-good',
+        moduleId: './modules/customs-report/expenditure-good/index',
         nav: true,
         title: 'Laporan Pengeluaran Hasil Produksi',
         auth: true,
