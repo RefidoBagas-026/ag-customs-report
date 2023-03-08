@@ -160,9 +160,10 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U1": 1 },
             iconClass: 'fa fa-dashboard'
-        }    
+        }
     },
     {
         route: '/customs-report/expenditure-raw-material',
@@ -173,7 +174,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U2": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -186,7 +188,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U3": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -199,7 +202,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U4": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -212,7 +216,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U5": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -225,7 +230,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U6": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -238,7 +244,8 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U7": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
@@ -251,9 +258,10 @@ module.exports = [
         auth: true,
         settings: {
             group: "customs-report",
-            permission: { "B1": 1, "BC":1, "C9": 1 },
+            // permission: { "B1": 1, "BC":1, "C9": 1 },
+            permission: { "U8": 1 },
             iconClass: 'fa fa-dashboard'
         }
     },
-   
+
 ]
