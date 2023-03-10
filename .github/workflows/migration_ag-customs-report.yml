@@ -6,7 +6,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - ag-customs-report-mai
 on:
   push:
     branches:
-      - main-uat
+      - main
   workflow_dispatch:
 
 jobs:
