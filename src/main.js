@@ -30,11 +30,11 @@ export async function configure(aurelia) {
         }
       }
 
-      var auth = "https://com-ambassador-service-auth-uat.azurewebsites.net/v1/";
-      var customsReport = "https://ag-customs-report.azurewebsites.net/v1/" ;
-      var purchasing = "https://com-danliris-service-purchasing.azurewebsites.net/v1/" ;
-      var inventory = "https://com-danliris-service-inventory-prd.azurewebsites.net/v1/";
-      var garmentProduction = "https://com-danliris-service-garment.azurewebsites.net/";
+      var auth = "https://com-ambassador-service-auth.azurewebsites.net/v1/";
+      var customsReport = "https://com-ambassador-service-support.azurewebsites.net/v1/" ;
+      var purchasing = "https://com-ambassador-service-purchasing.azurewebsites.net/v1/" ;
+      var inventory = "https://com-ambassador-service-inventory.azurewebsites.net/v1/";
+      var garmentProduction = "https://com-ambassador-service-garment.azurewebsites.net/";
 
 
       config.registerEndpoint('auth', auth);
