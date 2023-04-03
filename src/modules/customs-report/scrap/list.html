@@ -1,33 +1,28 @@
-
 <template>
-  
-    <h1 class="page-header">Laporan Pertanggungjawaban Barang Reject dan Scrap</h1>
+
+    <h1 class="page-header">Laporan Penyelesaian Waste / Scrap</h1>
     <form class="form-horizontal">
 
-            <au-datepicker 
-            label="Tanggal Awal Laporan" 
-            value.bind="dateFrom" error.bind="error.dateFrom"
+        <au-datepicker label="Tanggal Awal Laporan" value.bind="dateFrom" error.bind="error.dateFrom"
             options.bind="controlOptions">
-            </au-datepicker>
+        </au-datepicker>
 
-            <au-datepicker 
-            label="Tanggal Akhir Laporan" 
-            value.bind="dateTo" error.bind="error.dateTo"
+        <au-datepicker label="Tanggal Akhir Laporan" value.bind="dateTo" error.bind="error.dateTo"
             options.bind="controlOptions">
-            </au-datepicker>
+        </au-datepicker>
 
-            <div class="form-group">
-                <label for="contact" class="col-sm-6 control-label"></label>
-                <div class="col-sm-3">
-                    <button click.delegate="search()" class='btn btn-success'>Cari</button>
-                    <button click.delegate="reset()" class='btn btn-success'>Reset</button>
-                </div>
+        <div class="form-group">
+            <label for="contact" class="col-sm-6 control-label"></label>
+            <div class="col-sm-3">
+                <button click.delegate="search()" class='btn btn-success'>Cari</button>
+                <button click.delegate="reset()" class='btn btn-success'>Reset</button>
             </div>
-             <div class="btn-group pull-left">
-                <a click.delegate="ExportToExcel()" class='btn btn-primary'>Excel</a>
-            </div>
-        </form>
-       <br>
+        </div>
+        <div class="btn-group pull-left">
+            <a click.delegate="ExportToExcel()" class='btn btn-primary'>Excel</a>
+        </div>
+    </form>
+    <br>
     </br>
 
     <div class="table-responsive">
@@ -47,7 +42,7 @@
                 </tr>
             </thead>
             <tbody>
-             
+
                 <tr repeat.for="item of data">
                     <td class="text-left">${item.ClassificationCode}</td>
                     <td class="text-left">${item.ClassificationName}</td>
@@ -66,7 +61,7 @@
     <div class="alert alert-info text-center" role="alert" if.bind="data.length === 0">
         Tidak ada data.
     </div>
-    <pagination if.bind="info.total>info.size"  info.bind="info" change.delegate="changePage($event)"></pagination>
-    <hr/>
-</au-input-form> 
+    <pagination if.bind="info.total>info.size" info.bind="info" change.delegate="changePage($event)"></pagination>
+    <hr />
+    </au-input-form>
 </template>
