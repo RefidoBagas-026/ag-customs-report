@@ -250,9 +250,9 @@ module.exports = [
         }
     },
     {
-        route: '/customs-report/waste-scrap',
-        name: 'customs-report-waste-scrap',
-        moduleId: './modules/customs-report/waste-scrap/index',
+        route: '/customs-report/scrap',
+        name: 'customs-report-scrap',
+        moduleId: './modules/customs-report/scrap/index',
         nav: true,
         title: 'Laporan Penyelesaian Waste / Scrap',
         auth: true,
