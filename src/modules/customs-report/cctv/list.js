@@ -11,7 +11,8 @@ export class List {
   }
 
   tv1() {
-    window.open("http://175.106.17.18:8009/ptag/");
+    // window.open("http://175.106.17.18:8009/ptag/");
+    window.open("http://175.106.17.18:9002/doc/page/login.asp");
   }
 
 
