@@ -58,11 +58,19 @@ export class List {
                 this.totalqty = 0;
                 this.totalprice = 0;
                 this.data = [];
-
+                var prices =[];
                 for (var i of result.data) {
-
                     this.totalqty += i.qty;
-                    this.totalprice += i.price;
+                    // this.totalprice += i.price;
+
+                    var price = i.pebNo.toString() + i.price.toString();
+
+                    var existPrice = prices.find(x => x === price);
+                    if(!existPrice){
+                        prices.push(price);
+                        this.totalprice += i.price;
+                    }
+
                     i.price = i.price.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                     i.qty = i.qty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
