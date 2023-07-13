@@ -5,12 +5,12 @@ import moment from 'moment';
 
 @inject(Router, Service)
 export class List {
-  constructor(router, service) {
+    constructor(router, service) {
         this.service = service;
         this.router = router;
     }
-    
-    info = { page: 1,size:50};
+
+    info = { page: 1, size: 50 };
 
     controlOptions = {
         label: {
@@ -22,7 +22,7 @@ export class List {
     };
 
 
-    search(){
+    search() {
         this.error = {};
 
         if (!this.dateTo || this.dateTo == "Invalid Date")
@@ -35,86 +35,65 @@ export class List {
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             this.flag = true;
             this.info.page = 1;
-            this.info.total=0;
+            this.info.total = 0;
             this.searching();
         }
     }
 
     searching() {
-     
-    var args = {
+
+        var args = {
             page: this.info.page,
             size: this.info.size,
-            dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-            dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+            dateFrom: this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
+            dateTo: this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
         }
         this.service.search(args)
-     
+
             .then(result => {
-               this.rowCount=[];
-               var rowDoc=[];
-               this.info.total=result.info.total;    
-               var index=0;
-               this.totalqty = 0;
+                this.rowCount = [];
+                var rowDoc = [];
+                this.info.total = result.info.total;
+                var index = 0;
+                this.totalqty = 0;
                 this.totalprice = 0;
-               this.data=[];
-               for (var i of result.data){
-                    
-                this.totalqty += i.qty;
-                this.totalprice += i.price;
-                i.price = i.price.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                i.qty = i.qty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+                this.data = [];
+                var prices =[];
+                for (var i of result.data) {
+                    this.totalqty += i.qty;
+                    // this.totalprice += i.price;
 
-                this.data.push(i);
-            }
-               
-            //    for(var a of result.data){
-            //        var bc=a.BCType.toString();
-            //        var doc=a.BCNo;
-            //        var bcdate = a.BCDate.toString();
-            //        if(!this.rowCount[bc]){
-            //            this.rowCount[bc]=1;
-            //        }
-            //        else{
-            //            this.rowCount[bc]++;
-            //        }
+                    var price = i.pebNo.toString() + i.price.toString();
 
-            //        if(!rowDoc[doc+bc]){
-            //            index++;
-            //            //a.count=index;
-            //            rowDoc[doc+bc]=1;
-            //        }
-            //        else{
-            //            rowDoc[doc+bc]++;
-            //        }
+                    var existPrice = prices.find(x => x === price);
+                    if(!existPrice){
+                        prices.push(price);
+                        this.totalprice += i.price;
+                    }
 
-            //        if(!rowDoc[bc+bcdate]){
-            //         index++;
-            //         //a.count=index;
-            //         rowDoc[bc+bcdate]=1;
-            //         }
-            //         else{
-            //             rowDoc[bc+bcdate]++;
-            //         }
-            //    }
-            //    for(var b of result.data){
-            //        let bcno=result.data.find(o=> o.BCType + o.BCNo==b.BCType + b.BCNo);
-            //        if(bcno){
-            //            bcno.docspan=rowDoc[b.BCNo+b.BCType];
-            //        }
-            //        let bctipe=result.data.find(o=> o.BCType ==b.BCType);
-            //        if(bctipe){
-            //            bctipe.rowspan=this.rowCount[b.BCType];
-            //        }
-            //        let bcdates=result.data.find(o=> o.BCType + o.BCDate == b.BCType + b.BCDate);
-            //        //console.log(bcdates)
-            //        if(bcdates){
-            //             bcdates.bcdatespan=rowDoc[b.BCType + b.BCDate];
-            //        }
-            //    }
-            //    this.data=result.data;
+                    i.price = i.price.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                    i.qty = i.qty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+
+                    this.data.push(i);
+
+                    //Span
+                    var peb = i.pebNo.toString();
+                    if (!this.rowCount[peb]) {
+                        this.rowCount[peb] = 1;
+                    } else {
+                        this.rowCount[peb]++;
+                    }
+                }
+
+                for (var b of result.data) {
+                    let pebspan = result.data.find(o => o.pebNo == b.pebNo);
+                    if (pebspan) {
+                        pebspan.rowspan = this.rowCount[b.pebNo]
+                    }
+                }
             });
-            
+
+
     }
 
     changePage(e) {
@@ -122,10 +101,10 @@ export class List {
         this.info.page = page;
         this.searching();
     }
-      reset() {
+    reset() {
         this.dateFrom = "";
         this.dateTo = "";
-        this.data=[];
+        this.data = [];
         this.info.page = 1;
     }
 
@@ -141,8 +120,8 @@ export class List {
 
         if (Object.getOwnPropertyNames(this.error).length === 0) {
             var info = {
-                dateFrom : this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
-                dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
+                dateFrom: this.dateFrom ? moment(this.dateFrom).format("YYYY-MM-DD") : "",
+                dateTo: this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
             }
             this.service.generateExcel(info);
         }

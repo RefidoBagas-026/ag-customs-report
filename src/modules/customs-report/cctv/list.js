@@ -6,14 +6,15 @@ import moment from 'moment';
 @inject(Router, Service)
 export class List {
   constructor(router, service) {
-        this.service = service;
-        this.router = router;
-    }
-    
-      tv1() {
-    window.open("http://cctv.danliris.com:8001");  
+    this.service = service;
+    this.router = router;
+  }
+
+  tv1() {
+    // window.open("http://175.106.17.18:8009/ptag/");
+    window.open("http://175.106.17.18:9002/doc/page/login.asp");
   }
 
 
-    
+
 }

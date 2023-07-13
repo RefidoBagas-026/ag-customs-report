@@ -137,20 +137,7 @@ module.exports = [
     //     }
 
     // },
-    //  {
-    //     route: '/customs-report/cctv',
-    //     name: 'customs-report-cctv',
-    //     moduleId: './modules/customs-report/cctv/index',
-    //     nav: true,
-    //     title: 'CCTV',
-    //     auth: true,
-    //     settings: {
-    //         group: "customs-report",
-    //         permission: { "B1": 1, "BC":1, "C9": 1 },
-    //         iconClass: 'fa fa-dashboard'
-    //     }
 
-    // }
     {
         route: '/customs-report/receipt-raw-material',
         name: 'customs-report-receipt-raw-material',
@@ -263,5 +250,19 @@ module.exports = [
             iconClass: 'fa fa-dashboard'
         }
     },
+    {
+        route: '/customs-report/cctv',
+        name: 'customs-report-cctv',
+        moduleId: './modules/customs-report/cctv/index',
+        nav: true,
+        title: 'CCTV',
+        auth: true,
+        settings: {
+            group: "customs-report",
+            permission: { "U8": 1 },
+            iconClass: 'fa fa-dashboard'
+        }
+
+    }
 
 ]

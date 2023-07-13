@@ -72,6 +72,13 @@
                     <td class="text-center">${item.SupplierName}</td>
                     <td class="text-center">${item.Country}</td>
                 </tr>
+                <tr class="active">
+                    <td class="text-center" colspan="10"><strong>T O T A L . . . . . . . . . . . . . . .</strong></td>
+                    <td class="text-right"><strong>${totalqty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+                    <td ></td>
+                    <td class="text-right"><strong>${totalprice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+                    <td colspan="3"></td>
+                </tr>
 
             </tbody>
         </table>

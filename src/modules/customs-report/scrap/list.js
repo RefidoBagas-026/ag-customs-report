@@ -31,10 +31,34 @@ export class List {
             dateTo : this.dateTo ? moment(this.dateTo).format("YYYY-MM-DD") : ""
         }
         this.service.search(args)
-     
+
             .then(result => {
+                this.beginQtyTotal = 0;
+                this.receiptQtyTotal = 0;
+                this.expendQtyTotal = 0;
+                this.lastQtyTotal = 0;
+                this.adjustQtyTotal = 0;
+                this.diffQtyTotal = 0;
+                this.OpnameQtyTotal = 0;
+                result.data.forEach(i => {
+                    this.beginQtyTotal += i.SaldoAwal;
+                    this.receiptQtyTotal += i.Pemasukan;
+                    this.expendQtyTotal += i.Pengeluaran;
+                    this.lastQtyTotal += i.SaldoAkhir;
+                    this.adjustQtyTotal += i.Penyesuaian;
+                    this.diffQtyTotal += i.Selisih;
+                    this.OpnameQtyTotal += i.StockOpname;
+
+                });
                this.data=result.data;     
                
+               this.beginQtyTotal = this.beginQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+               this.receiptQtyTotal = this.receiptQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+               this.expendQtyTotal = this.expendQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+               this.lastQtyTotal = this.lastQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+               this.adjustQtyTotal = this.adjustQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+               this.diffQtyTotal = this.diffQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+               this.OpnameQtyTotal = this.OpnameQtyTotal.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
             });
             
     }
