@@ -63,6 +63,13 @@
                             <td class="text-center">${item.QuantitySubcon}</td>
                             <td class="text-center">${item.SubconTo}</td>
                     </tr>
+                    <tr class="active">
+                        <td class="text-center" colspan="6"><strong>T O T A L . . . . . . . . . . . . . . .</strong></td>
+                        <td class="text-right"><strong>${totalqty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+                        <td class="text-right"><strong>${totalSubconQty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+                        <td></td>
+                       
+                    </tr>
                    
                 </tbody>
             </table>
