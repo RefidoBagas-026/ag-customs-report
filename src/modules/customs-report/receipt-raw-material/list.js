@@ -51,6 +51,8 @@ export class List {
         this.service.search(args)
 
             .then(result => {
+                this.totalqty = 0;
+                this.totalprice =0;
                 this.rowCount = [];
                 var rowDoc = [];
                 this.info.total = result.info.total;
@@ -63,8 +65,8 @@ export class List {
                     } else {
                         this.rowCount[type]++;
                     }
-                    // this.totalqty += i.qty;
-                    // this.totalprice += i.price;
+                    this.totalqty += i.SmallQuantity;
+                    this.totalprice += i.Amount;
                     i.SmallQuantity = i.SmallQuantity.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                     i.Amount = i.Amount.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
