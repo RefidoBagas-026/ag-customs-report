@@ -56,10 +56,12 @@ export class List {
                this.info.total=result.info.total;    
                var index=0;  
                this.data =[]; 
+               this.totalqty = 0;
+               this.totalSubconQty = 0;
                for (var i of result.data){
-                    
-                // this.totalqty += i.qty;
-                // this.totalprice += i.price;
+                this.totalqty += i.Quantity;
+                this.totalSubconQty += i.QuantitySC;
+          
                 i.Quantity = i.Quantity.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
                 i.QuantitySC = i.QuantitySC.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 
