@@ -38,7 +38,7 @@ export class SideNavBar {
         return true;
 
       var routePermission = route.config.settings.permission || {};
-      var myPermission = me.permission;
+      var myPermission =JSON.parse(me.permission);
 
       var routeKeys = Object.getOwnPropertyNames(routePermission);
 
