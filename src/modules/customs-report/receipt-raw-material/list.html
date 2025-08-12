@@ -30,8 +30,9 @@
             <thead align="center">
                 <tr>
                     <td align="center" rowspan="2">No</td>
+                    <td align="center" rowspan="2">Tgl Rekam</td>
                     <td align="center" rowspan="2">Jenis Dokumen</td>
-                    <td colspan="3">Dokumen Pabean</td>
+                    <td colspan="4">Dokumen Pabean</td>
                     <td colspan="2">Bukti Penerimaan Barang</td>
                     <td align="center" rowspan="2">Kode Barang</td>
                     <td align="center" rowspan="2">Nama Barang</td>
@@ -46,6 +47,7 @@
                 <tr>
                     <td>Nomor</td>
                     <td>Tanggal</td>
+                    <td>Kode HS</td>
                     <td>Nomor Seri Barang</td>
                     <td>Nomor</td>
                     <td>Tanggal</td>
@@ -55,10 +57,12 @@
 
                 <tr repeat.for="item of data">
                     <td class="text-center">${$index + 1}</td>
+                    <td class="text-center">-</td>
                     <td class="text-center" if.bind="item.rowspan" rowspan="${item.rowspan}">${item.CustomsType}</td>
                     <td class="text-center" if.bind="item.rowspan" rowspan="${item.rowspan}">${item.BeacukaiNo}</td>
                     <td class="text-center" if.bind="item.rowspan" rowspan="${item.rowspan}">${item.BeacukaiDate |
                         dateFormat:'D MMM YYYY'}</td>
+                    <td class="text-center">-</td>
                     <td class="text-center">${item.SerialNo}</td>
                     <td class="text-center">${item.URNNo}</td>
                     <td class="text-center">${item.URNDate | dateFormat:'D MMM YYYY'}</td>
@@ -73,7 +77,7 @@
                     <td class="text-center">${item.Country}</td>
                 </tr>
                 <tr class="active">
-                    <td class="text-center" colspan="10"><strong>T O T A L . . . . . . . . . . . . . . .</strong></td>
+                    <td class="text-center" colspan="12"><strong>T O T A L . . . . . . . . . . . . . . .</strong></td>
                     <td class="text-right"><strong>${totalqty.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
                     <td ></td>
                     <td class="text-right"><strong>${totalprice.toLocaleString('en-EN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
